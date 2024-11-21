@@ -1,5 +1,6 @@
 import com.aluralatam.conversodemonedas.modelos.ConsultaApiMonedas;
 import com.aluralatam.conversodemonedas.modelos.Menu;
+import com.aluralatam.conversordemonedas.historial.Historial;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -21,13 +22,15 @@ public class Principal {
                 8)  Sol Perualo =>> Dólar
                 9)  Dólar =>> Peso Mexicano
                 10) Peso Mexicano =>> Dólar
-                11)  Salir
+                11) Historial 
+                12) Salir
                 Elija una opción valida:
                 ***********************************************************""";
         int seleccionDelMenu = 0;
         ConsultaApiMonedas consulta = new ConsultaApiMonedas();
-        Menu opcionSeleccionada = new Menu();
-        while (11 != seleccionDelMenu) {
+        Historial historial = new Historial();
+        Menu opcionSeleccionada = new Menu(historial);
+        while (12 != seleccionDelMenu) {
             try {
                 System.out.println(menu);
                 seleccionDelMenu = lectura.nextInt();
